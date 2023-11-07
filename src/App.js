@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState, Suspense, useEffect } from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
 import InfoTable from './components/InfoTable';
@@ -12,6 +12,11 @@ function App() {
   const handleMouseEnter = () => {
     const component = import('./components/ImageModal');
   };
+
+  useEffect(() => {
+    const component = import('./components/ImageModal');
+  }, []);
+
   return (
     <div className="App">
       <Header />
