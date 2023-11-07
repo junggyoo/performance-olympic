@@ -9,6 +9,9 @@ const ImageModal = React.lazy(() => import('./components/ImageModal'));
 function App() {
   const [showModal, setShowModal] = useState(false);
 
+  const handleMouseEnter = () => {
+    const component = import('./components/ImageModal');
+  };
   return (
     <div className="App">
       <Header />
@@ -17,6 +20,7 @@ function App() {
         onClick={() => {
           setShowModal(true);
         }}
+        onMouseEnter={handleMouseEnter}
       >
         올림픽 사진 보기
       </ButtonModal>
